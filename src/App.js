@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Counters from "./components/counter";
+import Counters from "./components/counters";
 import NavBar from "./components/navbar";
 
 class App extends Component {
