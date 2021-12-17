@@ -7,7 +7,23 @@ class Counter extends Component {
   //   }
   //or use arrow function
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("counter - didupdate");
+    console.log("prevProps :", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      //Ajax call and get new data from server
+    }
+  }
+
+  componentWillUnmount() {
+    //component called just before un mounted
+    //maily for cleanup
+    console.log("Counter - willunmount");
+  }
+
   render() {
+    console.log("counter - render");
     return (
       <div>
         {/* {this.props.children} This is for passing complex object from the parent  */}

@@ -23,6 +23,25 @@ class App extends Component {
       },
     ],
   };
+
+  //We can directly set state variable only in constructor.
+  //Also this.setState() cannot be called in constructor , it can only be
+  //called after it is rendered.
+  //props should be added to constructor
+
+  constructor() {
+    super();
+    console.log("App - Constructor");
+  }
+
+  componentDidMount() {
+    //after its rendered
+    // ajax call
+    //initialize the state
+    console.log("App - mounted");
+  }
+  //hooks are recursive. eg: render of all child components are called together.
+
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters: counters });
@@ -33,6 +52,7 @@ class App extends Component {
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++; //make sure you dont increment state directly
+    //react needs only state for comparing dom
     this.setState({ counters: counters });
   };
 
@@ -45,6 +65,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App rendered");
     return (
       <React.Fragment>
         <NavBar
