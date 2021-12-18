@@ -19,13 +19,14 @@
 
 //Stateless functional Component
 //props desctructuring
-//Also no life cycle hooks
+//Also no life cycle hoosks
+import Cart from "./cart";
 const NavBar = ({ totalCounters }) => {
   console.log("Navbar  - render");
   return (
     <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand" href="test">
-        Navbar{" "}
+        <span className="display-3">Shopping Cart</span> <Cart />
         <span className="badge badge-pill badge-secondary">
           {totalCounters}
         </span>
